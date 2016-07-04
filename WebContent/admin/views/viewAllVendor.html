@@ -1,0 +1,68 @@
+<div style="min-height:600px">
+
+<h3><center>Vendors List</center></h3>
+
+
+<form autocomplete="off">
+<table class="table table-striped " border="1">
+<thead>
+<tr style="color: brown; background-color:#ECCC9B">
+<th> <b>Select to edit</b></th>
+<th> <b>Vendor Id</b></th>
+<th> <b>First Name </b></th>
+<th> <b>Last Name</b></th>
+<th> <b>Address</b></th>
+<th> <b>Email</b></th>
+<th> <b>Contact No</b></th>
+<th> <b>Vendor Name</b></th>
+<th> <b>Status </b></th>
+<th> <b>Update</b></th>
+
+</tr>
+</thead>
+<tr ng-repeat = "ven in vendors track by $index">
+
+<td><input type="checkbox"  ng-model="ven.isEditVisible" ng-click="toggleVendor(ven,$index)" /></td>
+  
+
+<td><span ng-hide="ven.isEditVisible">{{ven.vendorId}}</span>
+<input type="number" style="width:85px;" ng-model="ven.vendorId" ng-show="ven.isEditVisible" ng-disabled="true"></td>
+
+<td><span ng-hide="ven.isEditVisible">{{ven.firstName}}</span>
+ <input type="text"  style="width:70px;" ng-model="ven.firstName" ng-show="ven.isEditVisible"></td>
+ 
+<td><span ng-hide="ven.isEditVisible">{{ven.lastName}}</span>
+<input type="text" style="width:70px;" ng-model="ven.lastName" ng-show="ven.isEditVisible"></td>
+
+<td><span ng-hide="ven.isEditVisible">{{ven.address}}</span>
+<input type="text" style="width:100px;" ng-model="ven.address" ng-show="ven.isEditVisible"></td>
+
+
+<td><span ng-hide="ven.isEditVisible">{{ven.email}}</span>
+<input type="email" style="width:140px;" ng-model="ven.email" ng-show="ven.isEditVisible"></td>
+
+
+<td><span ng-hide="ven.isEditVisible">{{ven.contactNumber}}</span>
+<input type="text" style="width:80px;" ng-model="ven.contactNumber" ng-show="ven.isEditVisible"></td>
+
+
+<!-- <td><span ng-hide="ven.isEditVisible">{{ven.dob.toLocaleDateString()}}</span>
+<input type="date" style="width:120px;" ng-model="ven.dob" ng-show="ven.isEditVisible"></td>
+ -->
+
+<td><span ng-hide="ven.isEditVisible">{{ven.vendorName}}</span>
+<input type="text" style="width:80px;" ng-model="ven.vendorName" ng-show="ven.isEditVisible"></td>
+
+<td><span ng-hide="ven.isEditVisible">{{ven.status}}</span>
+<select ng-model="ven.status" style="width:80px;" ng-options="st for st in status" ng-show="ven.isEditVisible">
+<option value="">Status</option>
+</select></td>
+
+
+<td> <input type="button" value="Save" style="background-color:#835136; color: black" class = "btn btn-warning" ng-disabled="!ven.isEditVisible" ng-click="updateVendor($index,ven)"></td>
+
+</tr>
+</table>
+
+</form>
+</div>

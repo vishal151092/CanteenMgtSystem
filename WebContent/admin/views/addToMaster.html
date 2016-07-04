@@ -1,0 +1,102 @@
+<div style="min-height:600px"><!-- <form> -->
+<h3><b>Add Vendor</b></h3>
+
+<div class="alert alert-success" ng-show="showLabel" style="margin-bottom:0px;width: 600px;min-height:600px">
+ Vendor added to Master table successfully !! 
+</div>
+<form novalidate name="myForm" >
+
+<div>
+
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding"></div>
+		<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+		
+		 
+		 
+		 <div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 form-group">
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-2 ">Vendor Id:<Mand>*</Mand>
+					
+				</div>
+
+                <div class="col-sm-6  col-xs-12 col-md-3 col-lg-3 form-group">
+				<input type="number" name="userId" ng-model="ven.userId"
+							required placeholder="vendor Id" class="form-control"
+							ng-minlength="4" ng-maxlength="8" /> <span class="errorMsg"
+							ng-show="myForm.userId.$dirty && myForm.userId.$error.required">
+							Please enter Vendor Id</span> <span class="errorMsg"
+							ng-show="myForm.userId.$dirty && myForm.userId.$error.minlength">
+							Vendor Id cannot be less than 4 digits</span> <span class="errorMsg"
+							ng-show="myForm.userId.$dirty && myForm.userId.$error.maxlength">
+							Vendor Id cannot be more than 8 digits</span>
+					</div>
+			</div>
+		 
+		 
+				<div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 form-group">
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-2 ">Password:<Mand>*</Mand></div>
+
+
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-3 form-group">
+					<input type="password" name="password" ng-model="ven.password"
+							required placeholder="password" class="form-control"
+							ng-minlength="3" ng-maxlength="20" /> <span class="errorMsg"
+							ng-show="myForm.password.$dirty && myForm.password.$error.required">
+							Please enter First Name</span> <span class="errorMsg"
+							ng-show="myForm.password.$dirty && myForm.password.$error.minlength">
+							Please enter minimum 3 Character</span> <span class="errorMsg"
+							ng-show="myForm.password.$dirty && myForm.password.$error.maxlength">
+							Password cannot be more than 20 Character</span>
+
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 form-group">
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-2 ">Role:</div>
+
+
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-3 form-group">
+					<input type="text" ng-disabled="true" name="role" value="vendor" ng-model="ven.role"
+							 placeholder="vendor" class="form-control"
+							ng-minlength="3" ng-maxlength="10" /> 
+							<!-- <span class="errorMsg" ng-show="myForm.role.$dirty && myForm.role.$error.required">
+							Please enter Last Name</span> 
+							<span class="errorMsg"
+							ng-show="myForm.role.$dirty && myForm.role.$error.minlength">
+							Please enter minimum 3 Character</span> 
+							<span class="errorMsg"
+							ng-show="myForm.role.$dirty && myForm.role.$error.maxlength">
+							Role cannot be more than 10 Character</span> -->
+
+				</div>
+			</div>
+			
+			
+		<div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 form-group">
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-2 "></div>
+
+
+				<div class="col-sm-6  col-xs-12 col-md-3 col-lg-3 form-group">
+					<button class="btn btn-primary" style="padding: 10px 12px"
+					ng-click="addVendorToMaster(ven)" ng-disabled="myForm.$invalid"  >Add To Master</button>
+
+				</div>
+			</div>
+			
+				
+
+							
+</div>
+</div>
+</form>
+<div id="myModal1"  class="modal fade" role="dialog" style="height: 350px;">
+	 <div class="modal-dialog">
+	 <div class="modal-content">
+	 <div class="modal-header"><button type="button" class="close" data-dismiss="modal"> &times;</button>
+	 <h4 class="modal-title">&nbsp;<b>Vendor data has been added to master table successfully.</b></h4>
+	 </div>
+	 </div>
+	 </div>
+	 </div>
+</div>
+			

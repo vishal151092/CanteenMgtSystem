@@ -1,0 +1,179 @@
+<div style="min-height:750px; margin-left: 30%; margin-right: 20%"><!-- <form> -->
+
+<form novalidate name="myForm" >
+
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding ">
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-left: 20%; margin-right: 20%; margin-bottom: 25px">
+		<h3>Add Vendor</h3>
+		</div>		
+		
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>	Vendor Name:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+						<input type="text" name="vendorName" ng-model="ven.vendorName" required placeholder="Vendor Name" class="form-control"
+							ng-minlength="3" ng-maxlength="20" /> 
+						<span class="errorMsg" ng-show="myForm.vendorName.$dirty && myForm.vendorName.$error.required">
+							<font color="red">Please enter Vendor Name</font></span> 
+						<span class="errorMsg" ng-show="myForm.vendorName.$dirty && myForm.vendorName.$error.minlength">
+							<font color="red">Please enter minimum 3 Character</font></span> 
+						<span class="errorMsg" ng-show="myForm.vendorName.$dirty && myForm.vendorName.$error.maxlength">
+							<font color="red">Name cannot be more than 10 Character</font></span>
+					</div>
+				
+				
+				
+		</div>
+
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>First Name:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<input type="text" name="firstName" ng-model="ven.firstName" placeholder="First Name" class="form-control"
+							ng-minlength="3" ng-maxlength="15" ng-pattern="/^[a-zA-Z\s]*$/" required/> 
+						<span class="errorMsg" ng-show="myForm.firstName.$dirty && myForm.firstName.$error.required">
+							<font color="red">Please enter First Name</font></span> 
+						<span class="errorMsg" ng-show="myForm.firstName.$dirty && myForm.firstName.$error.minlength">
+							<font color="red">Please enter minimum 3 Character</font></span> 
+						<span class="errorMsg" ng-show="myForm.firstName.$dirty && myForm.firstName.$error.maxlength">
+							<font color="red">Name cannot be more than 10 Character</font></span>
+						<span class="errorMsg" ng-show="myForm.firstName.$dirty && myForm.firstName.$error.pattern">
+							<font color="red">Enter only characters</font></span>
+					</div>
+		</div>
+
+
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>Last Name:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<input type="text" name="lastName" ng-model="ven.lastName" placeholder="Last Name" class="form-control"
+							ng-minlength="3" ng-maxlength="25" ng-pattern="/^[a-zA-Z\s]*$/" required/> 
+						<span class="errorMsg" ng-show="myForm.lastName.$dirty && myForm.lastName.$error.required">
+							<font color="red">Please enter Last Name</font></span> 
+						<span class="errorMsg" ng-show="myForm.lastName.$dirty && myForm.lastName.$error.minlength">
+							<font color="red">Please enter minimum 3 Character</font></span> 
+						<span class="errorMsg" ng-show="myForm.lastName.$dirty && myForm.lastName.$error.maxlength">
+							<font color="red">Name cannot be more than 10 Character</font></span>
+						<span class="errorMsg" ng-show="myForm.lastName.$dirty && myForm.lastName.$error.pattern">
+							<font color="red">Enter only characters</font></span>
+					</div>
+		</div>
+
+
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>Address:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+					
+					<textarea name="address" data-ng-model="ven.address" required
+							placeholder="Address" class="form-control"
+							ng-minlength="5" ng-maxlength="1000"></textarea>
+						<span class="errorMsg" ng-show="myForm.address.$dirty && myForm.address.$error.required">
+							<font color="red">Please enter Address</font></span>
+							<span class="errorMsg" ng-show="myForm.address.$dirty && myForm.address.$error.minlength">
+							<font color="red">Please enter minimum 5 characters</font></span> 
+					</div>
+		</div>
+				
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>Email:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+						<input type="email" name="email" ng-model="ven.email" placeholder="Email" class="form-control"
+							ng-minlength="2" ng-maxlength="100" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/" required/> 
+						<span class="errorMsg" ng-show="myForm.email.$dirty && myForm.email.$error.required">
+							<font color="red">Please enter Email</font></span>  
+						<span class="errorMsg" ng-show="myForm.email.$dirty && myForm.email.$error.pattern">
+							<font color="red">Please enter valid Email</font></span>  
+					</div>
+		</div>
+							
+				
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<b>Mobile No:<font color="red">*</font></b>
+					</div>
+
+					<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">	
+						<input type="number" name="contactNumber" ng-model="ven.contactNumber" placeholder="Contact No" class="form-control"
+							ng-minlength="10" ng-maxlength="10" ng-pattern="/^[789][0-9]{9}$/" required/> 
+						<span class="errorMsg" ng-show="myForm.contactNumber.$dirty && myForm.contactNumber.$error.required">
+							<font color="red">Please enter mobile Number</font></span> 
+						<span class="errorMsg" ng-show="myForm.contactNumber.$dirty && myForm.contactNumber.$error.pattern">
+							<font color="red">Please enter valid Mobile No</font></span> 
+						<span class="errorMsg" ng-show="myForm.contactNumber.$dirty && myForm.contactNumber.$error.minlength">
+							<font color="red">Please enter minimum 10 digit</font></span> 
+						<span class="errorMsg" ng-show="myForm.contactNumber.$dirty && myForm.contactNumber.$error.maxlength">
+							<font color="red">Mobile Number cannot be more than 10 digits</font></span>
+					</div>
+		</div>
+
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+				<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+				<input type="reset" value="Reset" class="form-control btn" style="background-color:#835136; color:black">
+				</div>
+				<div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+				<input type="submit" value="Add" ng-disabled="myForm.$invalid" data-toggle="modal" data-target="#myModal2" class="form-control btn" ng-click="addVendor(ven)" style="background-color:#835136; color: black"/>
+				</div>
+		</div>
+	
+	
+<div id="myModal2" class="modal fade" role="dialog"
+	style="height: 350px;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					&times;</button>
+				<h4 class="modal-title">
+					&nbsp;<b><center>Vendor added successfully.</center></b>
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+				
+
+		
+	 <!-- <div id="myModal2" class="modal hide fade" role="dialog" style="height: 350px;">
+	 <div class="modal-dialog">
+	 <div class="modal-content">
+	 <div class="modal-header">
+	   <button type="button" class="close" data-dismiss="modal" > &times;</button>
+	 <h2 class="modal-title">&nbsp;Vendor data has been added successfully.</h2>
+	 </div>
+	 </div>
+	 </div>
+	 </div> -->
+	 
+	 
+	</div>	
+
+</form>			
+
+</div>
+				

@@ -1,0 +1,82 @@
+<div ng-controller="FeedbackController">
+
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding ">
+	
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-6">
+		<form novalidate name="myForm" ng-submit="addFeedback(user);">
+			
+			
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">Vendor Name</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+<!-- 						<select ng-model="user.vendorId" name="vendorId" class="form-control" 
+								ng-options="list.value as list.name for list in category">
+								<option value="">Select category</option>
+															</select>
+ -->
+	<select ng-model="user.vendorId" name="vendorId" class="form-control" placeholder="Select Vendor">
+	<option value="">Select Vendor</option>
+	<option data-ng-repeat="list in vendorList" value="{{list[1]}}">{{list[0]}}</option><!-- 
+								ng-options="list[1] as list[0] for list in vendorList">
+								<option value="">Select category</option> -->
+															</select>
+
+					</div>
+</div>
+		
+		
+			
+			
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+						<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">Category</div>
+						<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+							<select ng-model="user.category" name="category" class="form-control" required>
+							<!-- 	ng-options="list.value as list.name for list in category" -->
+								<option value="">Select category</option>
+								<option value="Quality">Quality</option>
+								<option value="Hygiene">Hygiene</option>
+								<option value="Others">Others</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">Problem</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<textarea name="problem" data-ng-model="user.problem" required
+							placeholder="Write your problem" class="form-control" ng-minlength="3"></textarea>
+							 <span class="errorMsg"
+							ng-show="myForm.problem.$dirty && myForm.problem.$error.required">
+							Please enter the problem</span> 
+					</div>
+			</div>
+			
+			
+			
+			
+			
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">Suggestion</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<textarea name="suggestion" data-ng-model="user.suggestion" required
+							placeholder="Write suggestion" class="form-control" ng-minlength="3"></textarea>
+							 <span class="errorMsg"
+							ng-show="myForm.suggest.$dirty && myForm.suggest.$error.required">
+							Please enter suggestion</span> 
+					</div>
+			</div>
+		
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+						<div class="col-sm-6 col-xs-12 col-md-3 col-lg-3">
+							<input type="submit" class="btn btn-primary" value="Submit"
+								class="form-control" ng-disabled="myForm.$invalid">
+						</div>
+					</div>
+		
+		
+</form>
+</div>
+</div>
+
+</div>
