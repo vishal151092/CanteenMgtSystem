@@ -1,0 +1,58 @@
+<div>
+<h3><center>Menu List</center></h3>
+ <form autocomplete="off">
+<table class="table table-striped css-serial" border="1">
+<thead>
+<tr style="color: brown; background-color:#ECCC9B">
+<th> <b>Serial No.</b></th>
+
+<th> <b>Vendor Name</b></th>
+<th> <b>Menu</b></th>
+<th> <b>Time</b></th>
+<th> <b>Category</b></th>
+<th> <b>Style</b></th>
+<th> <b>Price</b></th>
+<th> <b>Day</b></th>
+</tr>
+</thead>
+
+<tr ng-repeat = "menu in menuListwithvendor">
+
+<td>&nbsp;</td>
+
+<!-- <td>{{menu.serialNo}}</td> -->
+
+<td>{{menu.vendorName}}</td>
+
+<td>{{menu.item}}</td>
+
+<td>{{menu.type}}</td>
+
+<td>{{menu.category}}</td>
+
+<td>{{menu.subCategory}}</td>
+
+<td>{{menu.price}}</td>
+
+<td>{{menu.day}}</td>
+
+</tr>
+</table> 
+
+</form>
+<div ng-if="menuListwithvendor.length === 0">
+<h3><center>There are no items in menu list to show</center></h3>
+<center><div ng-show="false" class="con_down">
+				<h4>
+					<a  id="FontColor" class="btn btn-primary" href="/CMS/vendor/upload/menu.xls" download>Edit</a>
+				</h4>
+			</div></center></div>	
+			
+			<div ng-if="menuListwithvendor.length!=0">
+
+<center><div ng-show="true" class="con_down">
+				<h4>
+					<a  id="FontColor" class="btn btn-primary" href="/CMS/vendor/upload/menu.xls" download>Edit</a>
+				</h4>
+			</div></center></div>
+</div>

@@ -1,0 +1,140 @@
+<div>
+	<div>
+	<h3 align="center">
+		<b>Welcome to Weekly Menu Wizard</b>
+	</h3>
+	<br>
+
+	<div>
+		<img
+			style="position: absolute; top: 560px; height: 253px; right: 0px;"
+			src="template/images/f1.png">
+	</div>
+
+	<div>
+		<img
+			style="position: absolute; position: absolute; top: 500px; height: 220px;"
+			src="template/images/f4.png">
+	</div>
+
+	<div>
+		<img
+			style="position: absolute; position: absolute; top: 570px; height: 235px; right: 439px;"
+			src="template/images/f6.png">
+	</div>
+
+	<div>
+		<!-- <form method="post" name="uploadFile" data-ng-show="uploadFiles" action="UploadServlet" enctype="multipart/form-data" data-ng-submit="process.fileUploader()">
+						<h4>Upload File</h4>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<input type="file" name="file" data-ng-model="uploadData" class="form-control">
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<input type="submit" value="Upload File" class="btn btn-success">
+							</div>
+						</div>
+					</form> -->
+		<div style="width: 700px; margin: 0px auto;">
+			<form method="post" id="fromFileUpload" enctype="multipart/form-data" ng-submit="continueFileUpload()">
+				<!-- <form method="post" name="uploadFile" data-ng-show="uploadFiles" action="UploadServlet" enctype="multipart/form-data" data-ng-submit="process.fileUploader()"> -->
+				<center><table border="2">
+				<center><table border="0" width="1000" style="border-collapse:collapse;" cellspacing="10px" cellpadding="10px">
+				
+				<tr class="form-group">
+						<td valign="bottom">
+							<div >
+								<label class="control-label" for="file"> Download Menu List template : </label>
+							</div>
+						</td>
+						<td align="center">
+							<div class="container2 con_down">
+									<a id="FontColor" class="btn btn-primary" href="/CMS/vendor/doc/menu.xls" download>Download</a>
+							</div>
+						</td>
+					 </tr>
+					<tr class="form-group">
+						<td>
+							<label class="control-label">
+								Please Upload the file : </label>
+						</td>
+						<td align="center">
+							<div class="input-max controls">
+								<input type="file" name="file" id="file" required>
+							</div>
+							<br>
+
+							<div class="box-header actions" align="center">
+									<button type="submit" id="FontColor" class="btn btn-primary" >
+										<!-- <i class="icon-arrow-right"></i> -->Upload
+									</button>
+							</div>
+						</td>
+					</tr><br>
+					
+					 <tr class="form-group">
+					 	<td>
+							<div >
+								<label class="control-label" for="file"> Edit Uploaded Menu : </label>
+							</div>
+						</td>
+						<td align="center">
+							<div class="container2">
+									<a id="FontColor" class="btn btn-primary" href="/CMS/vendor/upload/menu.xls">Edit</a>
+							</div>
+							
+						</td>
+					</tr>
+					<tr>
+					</tr>
+				</table></center>
+				<br><br><br><br><br><br><br>
+			</form>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload Details</h4>
+			</div>
+			<div class="modal-body">
+				<div class="modal-body" style="text-align: center;">
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding">
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+							{{modalMsg}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="myModal1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload Details</h4>
+			</div>
+			<div class="modal-body">
+				<div class="modal-body" style="text-align: center;">
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding">
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+							{{modalMsg1}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
