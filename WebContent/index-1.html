@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <title>Canteen Management System</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="template/images/new/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="template/styles/new/grid.css">
+    <link rel="stylesheet" href="template/styles/new/style.css">
+    
+      <script src="template/scripts/new/jquery.js"></script>
+    <script src="template/scripts/new/jquery-migrate-1.2.1.js"></script>
+    
+   <!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+ 
+ <link rel="stylesheet" href="template/styles/css1/normalize.css">
+
+     <link rel="stylesheet" href="template/styles/css1/style.css">
+    
+    
+    
+    
+    <!-- css from CMS-->
+    
+	 <link rel="stylesheet" href="menu/styles/styles.css">
+  	<link rel="stylesheet" href="template/styles/loginStyle.css">
+ 
+
+<link rel="stylesheet" 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+    
+    <!-- js from CMS-->
+    
+    
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>--> 
+<script src="template/scripts/new/script.js"></script>   
+    <script type="text/javascript" src="template/scripts/angular.js"></script>
+<script type="text/javascript" src="template/scripts/angular-route.js"></script>
+<script type="text/javascript" src="template/scripts/controllers/app.js"></script>
+<script type="text/javascript" src="login/scripts/controllers/loginController.js"></script>
+<script type="text/javascript" src="login/scripts/controllers/logoutController.js"></script>
+<script type="text/javascript" src="admin/scripts/controllers/adminController.js"></script>
+<script type="text/javascript" src="menu/scripts/controllers/menuController.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/addFeedbackController.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/fdbController.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/filterController.js"></script>
+<script type="text/javascript" src="vendor/scripts/VndrCntrl.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/FeedbackActionController.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/viewMyNotification.js"></script>
+<script type="text/javascript" src="template/scripts/angular-route.js"></script>
+<script type="text/javascript" src="feedback/scripts/controllers/getMyFeedbackController.js"></script>
+
+<script type="text/javascript" src="template/scripts/textToggle.js"></script>
+
+<!-- <script type="text/javascript" src="feedback/scripts/controllers/notificationJS.js"></script>
+ -->
+ <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+
+
+
+ 
+<!-- [if lt IE 9] -->
+ <html class="lt-ie9">
+ <div style=' clear: both; text-align:center; position: relative;'>
+     <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+         <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+              alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+     </a> 
+ </div>
+ <script src="js/html5shiv.js"></script>
+ <!-- [endif] -->
+ 
+    <script src='template/scripts/new/device.min.js'></script> 
+    
+    
+    
+</head>
+
+<body>
+<div>
+ <!-- <div class="page">  -->
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+
+      <!--     <div id="stuck_container" class="stuck_container">
+          <div class="container">
+
+                <div class="brand">
+                    <h1 class="brand_name">
+                        <a href="#" style="font: inherit;color: inherit;text-decoration: none;" ><h2>TCS FOOD COURT<br />Great food.Tastes good</h2></a>
+                    </h1>
+                </div>
+
+                <nav class="nav">
+                    <ul class="sf-menu">
+  
+  					<li ng-class="active:currentTab" ng-repeat="tab in tabs"><a href="{{tab.url}}" ng-click="setCurrentTab()">{{tab.name}}</a></li>
+	                </ul>
+                </nav>
+            </div> -->
+       
+         
+
+          <div class="container123">
+             <img src="template/images/head.jpg">
+            
+          </div>
+     
+    <nav id="mainnav" class="navbar navbar-default" style="background-color: #E59850; border-color: #653B3B;  color: #A95858; ">
+      <div class="container">
+    
+        <ul class="nav nav-tabs" class="sf-menu" style="margin-top: 9px; margin-bottom: 9px;" >
+       
+      <li   data-toggle="tab" ng-repeat="tab in tabs"><a href="{{tab.url}}"><div style="font-size:98%;color: brown;"><b>{{tab.name}}</div></b></a></li>
+
+      </ul>
+     </div>
+     </nav> 
+</header> 
+<!-- </div> -->
+
+ 
+
+ <!--========================================================
+                              Ng-Views
+    =========================================================-->
+ <main >
+        <section class="well well__offset-3" style="background-image: url(template/images/tatabackground.png)" >
+            <div class="container" style="min-height: 600px">
+    
+    
+    
+    
+    
+    	<div ng-view></div>
+	
+    
+    
+    
+    
+    
+    
+    
+    
+            </div>
+        </section>
+    </main>
+    
+ 
+ 
+ 
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+      <footer>
+         <div class="tm"><a href="#" style="font: inherit;color: inherit;text-decoration: none;"><img alt="">Copyright@TCS</a></div>
+    </footer>
+</div>
+
+
+<script src="template/scripts/new/script.js"></script>
+
+</body>
+</html>
