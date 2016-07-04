@@ -1,0 +1,58 @@
+<div style="margin: 30px">
+	
+	<h3><center>Worklist</center></h3>
+	<br><br>
+<!-- <input type="text" placeholder="enter search here" ng-model = "value"/> -->
+
+<div ng-if="feedbacks.length==0">
+<h3>No feedbacks to show </h3>
+
+</div>
+
+<div>
+<form autocomplete="off" >
+<table class="table table-hover css-serial"  ng-if="feedbacks.length>0" border="1">
+<thead>
+<tr style="color: brown; background-color:#ECCC9B">
+<th> <b>Serial No.</b></th>
+<th> <b>Feedback ID </b></th>
+<th> <b>Employee ID</b></th>
+<th> <b>Vendor ID </b></th>
+<th> <b>Category </b></th>
+<th> <b>Problem </b></th>
+<th> <b>Suggestion </b></th>
+<th> <b>Submitted On </b></th>
+</tr>
+</thead>
+<tr ng-Repeat = "feed in feedbacks track by $index">
+
+<td>&nbsp;</td>
+
+<td><span><a style="cursor: pointer;" ng-click="takeActionOnNotification($index)">{{feed.feedbackId}}</a> </span>
+</td>
+<td><span>{{feed.empId}}</span>
+</td>
+
+<td><span>{{feed.vendorId}}</span>
+</td>
+
+<td><span>{{feed.category}}</span>
+</td>
+
+
+<td><span>{{feed.problem}}</span>
+</td>
+
+<td><span>{{feed.suggestion}}</span>
+</td>
+
+
+<td><span>{{feed.submittedOn}}</span>
+</td>
+
+
+</tr>
+</table>
+</form>
+</div>
+</div>

@@ -1,0 +1,121 @@
+
+<div ng-controller="fdbController" style="min-height: 600px; margin: 30px">
+
+<h3><center>Feedback Log</center></h3>
+<br><br>
+
+	<div ng-if="allFeedbacks.length>0">
+	<select class="form-control" style="width: 170px; float:left;" name="test" id="offloc" ng-model="test.status">
+			<option value="">Search-By-Status</option>
+			<option value="Pending">Pending</option>
+			<option value="Rejected">Rejected</option>
+			<option value="In Process">In Process</option>
+			<option value="Forwarded">Forwarded</option>
+			<option value="Solved">Solved</option>
+		</select>
+		
+			<input style="width: 170px; float: left;" type="text"
+				 name="search" ng-model="test.empId" class="form-control"
+				id="search1" placeholder="Search By Employee"> &nbsp; &nbsp;
+			&nbsp; &nbsp; &nbsp; 
+			
+			<input style="width: 170px; float: left;"
+				type="text" name="search" class="form-control"
+				ng-model="test.category" id="search2"
+				placeholder="Search By Category">
+
+		<button style="width: 180px;float:right;margin-top: 0px;height:35px;padding: -10px;" type="button" class="btn"
+						value="search" ng-click="generateExcel(statusExcel);" ng-disabled="!statusExcel">Download Report</button>
+	
+		<select class="form-control" style="width: 170px; float:right;" name="test" id="offloc" ng-model="statusExcel">
+			<option value="">Select Status</option>
+			<option value="%">All</option>
+			<option value="Pending">Pending</option>
+			<option value="Rejected">Rejected</option>
+			<option value="In Process">In Process</option>
+			<option value="Forwarded">Forwarded</option>
+			<option value="Solved">Solved</option>
+		</select>
+	
+		<b style="width: 75px; float:right;" >Generate Report</b>
+	
+	
+	<br>
+<hr>
+	<br>
+	
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+		<table class="table  table-hover table-striped css-serial" border="1">
+		<thead>
+			<tr  style="color: brown; background-color:#ECCC9B">
+			<th><b>Serial No.</b></th>
+				<th><b>Feedback ID</b></th>
+				<th><b>Employee ID</b></th>
+				<th><b>Category</b></th>
+				<th><b>Vendor ID</b></th>
+				<th><b>Feedback</b></th>
+				<th><b>Suggestion</b></th>
+				<th><b>Feedback submitted on</b></th>
+				<th><b>Status</b></th>
+				<th><b>Message to user</b></th>
+				<th><b>Accepted/Rejected On</b></th>
+		
+			</tr></thead>
+			<tr	ng-repeat="fb in allFeedbacks| filter : test | orderBy : '-feedbackId' ">
+			<td>&nbsp;</td>
+				<td><a style="cursor: pointer;"	ng-click="feedbackDtl(fb.feedbackId)" data-toggle="modal"
+					data-target="#myModal">{{fb.feedbackId}}</a></td>
+				<td>{{fb.empId}}</td>
+				<td>{{fb.category}}</td>
+				<td>{{fb.vendorId}}</td>
+				<td>{{fb.problem}}</td>
+				<td>{{fb.suggestion}}</td>
+				<td>{{fb.submittedOn}}</td>
+				<td>{{fb.status}}</td>
+				<td>{{fb.userMsg}}</td>
+				<td>{{fb.filteredOn}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog  modal-lg">
+
+		<!-- Modal content-->
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Feedback Details</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-body">
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding">
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+							<table class="table table-striped " border=1>
+								<tr>
+									<th>FeedbackID</th>
+									<th>Action taken</th>
+									<th>Action Remark</th>
+									<th>Action Submitted On</th>
+								</tr>
+								<tr ng-repeat="action in feedbackAction">
+									<td>{{action.feedbackId}}</td>
+									<td>{{action.action}}</td>
+									<td>{{action.remark}}</td>
+									<td>{{action.actionSumbittedOn}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+</div>

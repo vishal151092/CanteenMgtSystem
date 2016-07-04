@@ -1,0 +1,78 @@
+<div ng-controller="fdbVendorController"
+	style="min-height: 600px; margin: 30px">
+
+
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+		<table class="table table-striped  table-hover css-serial" border="1">
+		<thead>
+			<tr style="color: brown; background-color:#ECCC9B">
+			<th><b>Serial No.</b></th>
+				<th><b>Feedback ID</b></th>
+				<th><b>Employee ID</b></th>
+				<th><b>Vendor ID</b></th>
+				<th><b>Category</b></th>
+				<th><b>Problem</b></th>
+				<th><b>Suggestion</b></th>
+				<th><b>Feedback submitted on</b></th>
+				<th><b>Status</b></th>
+			</tr></thead>
+			<tr ng-repeat="fb in allValidFeedbacks| orderBy : '-feedbackId' ">
+			<td>&nbsp;</td>
+				<td><a style="cursor: pointer;"
+					ng-click="feedbackDtl(fb.feedbackId)" data-toggle="modal"
+					data-target="#myModal">{{fb.feedbackId}}</a></td>
+				<td>{{fb.empId}}</td>
+				<td>{{fb.vendorId}}</td>
+				<td>{{fb.category}}</td>
+				<td>{{fb.problem}}</td>
+				<td>{{fb.suggestion}}</td>
+				<td>{{fb.submittedOn}}</td>
+				<td>{{fb.status}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog  modal-lg">
+
+		<!-- Modal content-->
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Feedback Details</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-body">
+					<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding">
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+							<table class="table table-striped " border=1>
+								<tr>
+									<th>FeedbackID</th>
+									<th>Owner ID</th>
+									<th>Action</th>
+									<th>Query forwarded to</th>
+									<th>Remark</th>
+									<th>Action Submitted On</th>
+								</tr>
+								<tr ng-repeat="action in feedbackAction">
+									<td>{{action.feedbackId}}</td>
+									<td>{{action.ownerId}}</td>
+									<td>{{action.action}}</td>
+									<td ng-if="action.forwardedToId!==0">{{action.forwardedToId}}</td>
+									<td ng-if="action.forwardedToId==0">None</td>
+									<td>{{action.remark}}</td>
+									<td>{{action.actionSumbittedOn}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>

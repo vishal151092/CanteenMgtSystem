@@ -1,0 +1,176 @@
+
+<h3><center>New Feedbacks</center></h3>
+<div ng-if="feedbacks.length==0">
+
+<br>
+	<h4>No more feedbacks to filter</h4>
+
+</div>
+
+
+ <!-- <div ng-if="feedbacks.length>0">
+  	<input style="width: 170px; float: left;" type="text" class="form-control" name="search" ng-model="dataFilter.empId"
+		id="search1" placeholder="Search By Employee"> 
+		&nbsp; &nbsp;
+		&nbsp; &nbsp; 
+		&nbsp; 
+	<input style="width: 170px; float: left;" type="text" class="form-control" name="search"
+		ng-model="dataFilter.category" id="search2"
+		placeholder="Search By Category">
+ 
+ </div>
+ -->
+ <hr>
+
+<div style="margin: 30px" ng-if="feedbacks.length>0">
+		<input style="width: 170px; float: left;" type="text" class="form-control" name="search" ng-model="dataFilter.empId"
+		id="search1" placeholder="Search By Employee"> 
+		&nbsp; &nbsp;
+		&nbsp; &nbsp; 
+		&nbsp; 
+	<input style="width: 170px; float: left;" type="text" class="form-control" name="search"
+		ng-model="dataFilter.category" id="search2"
+		placeholder="Search By Category">
+<hr>
+
+	<table class="table table-hover css-serial" border="1">
+		<thead>
+			<tr style="color: brown; background-color:#ECCC9B">
+			<th><b>Serial No.</b></th>
+				<th><b>Feedback ID</b></th>
+				<th><b>User ID</b></th>
+				<th><b>Vendor ID</b></th>
+				<th><b>Category</b></th>
+				<th><b>Feedback</b></th>
+				<th><b>Suggestion</b></th>
+				<th><b>Submitted On</b></th>
+				<th><b>Status</b></th>
+				<th colspan="2"><center><b>Action</b></center></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="fb in feedbacks|filter : dataFilter track by $index">
+			<td>&nbsp;</td>
+				<td>{{fb.feedbackId}}</td>
+				<td>{{fb.empId}}</td>
+				<td>{{fb.vendorId}}</td>
+				<td>{{fb.category}}</td>
+
+				<td>{{fb.problem}}</td>
+				<td>{{fb.suggestion}}</td>
+				<td>{{fb.submittedOn}}</td>
+				<td>{{fb.status}}</td>
+
+				<td><button type="button" class="btn btn-info btn-lg"
+						value="search" data-toggle="modal" data-target="#myModalAccept" ng-click="rejectClicked($index)">
+						<span class="glyphicon"></span>Accept
+					</button></td>
+
+				<td><button type="button" class="btn btn-info btn-lg"
+						value="search" data-toggle="modal" data-target="#myModalReject"
+						ng-click="rejectClicked($index)">
+						<span class="glyphicon"></span>Reject
+					</button></td>
+
+
+				</tr>
+
+
+		</tbody>
+	</table>
+</div>
+
+<div id="myModalAccept" class="modal fade" role="dialog"
+	style="height: 350px;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					ng-click="clearRemark()">&times;</button>
+					<br>
+				<h4 class="modal-title">
+					&nbsp;<b>Accept Feedback</b>
+				</h4>
+				<br> 
+				<div ng-hide="chkBoxFeedbackActn">
+				<h4 class="modal-title">
+					&nbsp;<b>Message to user</b>
+				</h4>
+				<br>
+				<textarea name="remark" data-ng-model="acceptRemark" 
+					style="float: left; width: 250px; height: 100px; border: solid 1px;" placeholder="Message(optional)"></textarea>
+				</div>
+				<div style="position:fixed;right:130px;bottom:20px;">
+				<input type="checkbox" ng-model="chkBoxFeedbackActn" ng-init="chkBoxFeedbackActn=true"/>Move to Worklist
+				</div>
+				<input type="button" style="position:fixed;right:20px;bottom:20px;" value="Submit" class="btn btn-primary" data-dismiss="modal" ng-click="accept(acceptRemark)" style="height: 40px;"/>
+			
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div id="myModalReject" class="modal fade" role="dialog"
+	style="height: 350px;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					ng-click="clearRemark()">&times;</button>
+				<h4 class="modal-title">
+					&nbsp;<b>Message to user</b>
+				</h4>
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<input type="button" style="position:fixed;right:20px;bottom:20px;" value="Submit" class="btn btn-primary" data-dismiss="modal" ng-disabled="!rejectRemark" ng-click="reject(rejectRemark)" style="height: 40px;"/>
+				<textarea name="remark" data-ng-model="rejectRemark"
+					style="float: left; width: 250px; height: 100px; border: solid 1px;" placeholder="Message(Mandatory)" required></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="myModal1" class="modal fade" role="dialog"
+	style="height: 350px;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					&times;</button>
+				<h4 class="modal-title">
+					&nbsp;<b>Feedback accepted successfully</b>
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

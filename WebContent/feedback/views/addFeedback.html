@@ -1,0 +1,107 @@
+<div class="container-fluid" style="min-height: 600px;" ng-controller="FeedbackController">
+
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 topPadding ">
+
+		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-6"
+			style="margin-left: 20%; margin-right: 20%">
+			<form novalidate name="myForm" ng-submit="addFeedback(user);">
+				
+				
+				 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"
+					style="text-align: center;">
+					<h3><b>Submit Feedback
+					</b></h3>
+					<br>
+					<h5>Mandatory Fields(<font color="red">*</font>)</h5>
+					<br>
+				</div>
+
+				<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<b>Category <font color="red">*</font></b>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<select ng-model="user.category" name="category"
+							class="form-control" ng-change="CheckCat(user.category);" required>
+							<option value="">Select category</option>
+							<option value="Quality">Quality</option>
+							<option value="Hygiene">Hygiene</option>
+							<option value="Others">Others</option>
+						</select>
+					</div>
+				</div>
+
+				<div id="vendor" class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group" style='display:none;'>
+
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<b>Vendor Name <font color="red">*</font></b>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<select ng-model="user.vendorId" name="vendorId"
+							class="form-control" placeholder="Select Vendor">
+							<option value="">Select Vendor</option>
+							<option data-ng-repeat="list in vendorList" value="{{list[1]}}">{{list[0]}}</option>
+						</select>
+
+					</div>
+				</div>
+
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<b>Feedback <font color="red">*</font></b>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<textarea name="problem" data-ng-model="user.problem" required
+							placeholder="Write your problem" class="form-control"
+							ng-minlength="5" ng-maxlength="1000"></textarea>
+						<span class="errorMsg" ng-show="myForm.problem.$dirty && myForm.problem.$error.required">
+							<font color="red">Please enter the Feedback.</font></span>
+						<span class="errorMsg" ng-show="myForm.problem.$error.minlength">
+							<font color="red">Please enter Minimum 5 Characters.</font></span>
+						<span class="errorMsg" ng-show="myForm.problem.$error.maxlength">
+							<font color="red">Character limit exceeded.</font></span>
+					</div>
+			</div>
+
+
+				<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<b>Suggestion</b>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-md-3 col-lg-6">
+						<textarea name="suggestion" data-ng-model="user.suggestion"
+							placeholder="Write suggestion" class="form-control"></textarea>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 form-group">
+					<div style="margin-left: 180px;margin-top:15px " class="col-sm-6 col-xs-12 col-md-3 col-lg-3">
+						<input type="submit" class="btn btn-primary" data-toggle="modal"
+							data-target="#myModal" value="Submit" class="form-control"
+							ng-disabled="myForm.$invalid">
+					</div>
+				</div>
+
+        
+			</form>
+
+			<div id="myModal" class="modal fade" role="dialog"
+				style="height: 350px;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								&times;</button>
+							<h4 class="modal-title">
+								&nbsp;<b>Feedback submitted successfully</b>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
