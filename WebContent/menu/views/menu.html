@@ -1,0 +1,407 @@
+
+<!-- MAIN CONATINER 100% x 100% STARTS -->
+
+
+<div>
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+		<div>
+			<h3 align="left" id="wcBar" class="glyphicon glyphicon-user">Welcome
+				{{fName}} {{lName}}</h3>
+		</div>
+	</div>
+
+	<!-- 	<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 " id="div03">
+	
+			<div id="myNav">
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 " >
+					<div id="title">Time</div>					
+					<div id="myNavData">
+					  	<form >
+							<div>
+							<select class="form-control"  ng-model="menuFilter.type" ng-options="time for time in times">
+							<option value="">-SELECT-</option>
+							</select>
+							<input id="getCenter" class="btn btn-info btn-xs"
+												type="submit" value="Apply" />
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Category</div>					
+					<div id="myNavData">
+					    <div>
+						<form ng-click="getMenuByCategory(category)">
+							<div>
+							<select class="form-control" ng-model="category" ng-options="category for category in categorys">
+							<option value="">-SELECT-</option>
+								<input id="getCenter" class="btn btn-info btn-xs"
+												type="submit" value="Apply" />
+							</select>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Vendor</div>
+					<div id="myNavData">
+						<form ng-click="getMenuByVendor(vend.vendorId)">
+						<div>
+						<select class="form-control"  ng-model="vendor" >
+						    <option value="">-SELECT VENDOR-</option>
+						 <option ng-repeat="vend in vendorList" value="vend.vendorId">{{vend.vendorName}}</option> 
+						</select>
+						</div>
+						
+						<input id="getCenter" class="btn btn-info btn-xs" type="submit" value="Apply" />
+						</form>
+					</div>
+				</div>
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Days</div>
+					<div id="myNavData">
+						<div>
+							<form ng-click="getMenuByDays(day1)">
+								<div>
+										<select class="form-control" ng-model="day1" ng-options="day for day in days">
+										<option value="">-SELECT DAY-</option>
+										</select>
+ 											<input id="getCenter" class="btn btn-info btn-xs"
+												type="submit" value="Apply" />
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<br/>
+			</div>
+		</div>	 
+
+
+ -->
+	<!-- <div class="menu_block" class="nav navbar-nav navbar-left">
+		<nav>
+			<ul class="sf-menu">
+				<li class="current"><a href="#/menu">Menu</a></li>
+				<li class="with_ul">Timing
+					<ul>
+						<li ng-click="getMenuByType('All')"><label>All</label></li>
+						<li ng-click="getMenuByType('Breakfast')"><label>Breakfast</label></li>
+						<li ng-click="getMenuByType('Lunch')"><label>Lunch</label></li>
+						<li ng-click="getMenuByType('Dinner')"><label>Dinner</label></li>
+						<li ng-click="getMenuByType('Snacks')"><label>Snacks</label></li>
+						<li ng-click="getMenuByType('Mid-Night')"><label>Mid-Night</label></li>
+						<li ng-click="getMenuByType('Sundry')"><label>Sundry</label></li>
+					</ul>
+				</li>
+				<li class="with_ul">Category
+					<ul>
+						<li ng-click="getMenuByCategory('Vegetarian')"><label>Veg</label></li>
+						<li ng-click="getMenuByCategory('Non-Vegetarian')"><label>Non-Veg</label></li>
+
+					</ul>
+				</li>
+
+				 <li class="with_ul">Vendor
+               <ul>
+                  <li> All</li>
+                  <li>Breakfast</li>
+                  <li>Lunch</li>
+                  <li>Dinner</li>
+                  <li>Snacks</li>
+                  <li>Mid-Night</li>
+                  <li>Sundry</li>
+                </ul>
+              
+              </li>
+				 <li class="with_ul">Days
+
+					<ul>
+
+						<li ng-click="getMenuByDays('Monday')"><label>Monday</label></li>
+						<li ng-click="getMenuByDays('Tuesday')"><label>Tuesday</label></li>
+						<li ng-click="getMenuByDays('Wednesday')"><label>Wednesday</label></li>
+						<li ng-click="getMenuByDays('Thursday')"><label>Thursday</label></li>
+						<li ng-click="getMenuByDays('Friday')"><label>Friday</label></li>
+						<li ng-click="getMenuByDays('Saturday')"><label>Saturday</label></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="clear"></div>
+	</div>
+ -->
+
+
+
+
+
+
+	<!-- <div class="menu_block" class="nav navbar-nav navbar-right">
+          <nav>
+            <ul class="sf-menu1">
+              <li class="current"><a href="#/menu">Menu</a></li>
+              <li class="with_ul"><a>Timing</a>
+                <ul>
+                 <li ng-click="getMenuByType(time)"><a>All</a></li>
+                  <li ng-click="getMenuByType(time)"><a>Breakfast</a></li>
+                   <li ng-click="getMenuByType(time)"><a>Lunch</a></li>
+                   <li ng-click="getMenuByType(time)"><a>Dinner</a></li>
+                   <li ng-click="getMenuByType(time)"><a>Snacks</a></li>
+                    <li ng-click="getMenuByType(time)"><a>Mid-Night</a></li>
+                     <li ng-click="getMenuByType(time)"><a>Sundry</a></li>
+                  <li><a href="#">Good rest</a></li>
+                  <li><a href="#">Services</a></li>
+                </ul>
+              </li>
+              <li class="with_ul"><a>Category</a>
+              <ul>
+                  <li ng-click="getMenuByCategory()" ng-model="cat" value="Vegetarian">Veg</li>
+                  <li ng-click="getMenuByCategory(category)" ng-model="cat" value="Non-Vegetarian">Non-Veg</li>
+                  <li><a href="#">Good rest</a></li>
+                  <li><a href="#">Services</a></li>
+                </ul>
+              </li>
+              <li class="with_ul"><a>Vendor</a>
+               <ul>
+                  <li ng-repeat="vend in vendorList" ng-click="getMenuByVendor(vend.vendorId)">{{vend.vendorName}}</li>
+                  <li><a href="#">Good rest</a></li>
+                  <li><a href="#">Services</a></li>
+                </ul>
+              
+              </li>
+              <li class="with_ul"><a>Days</a>
+               <ul>
+                  <li ng-repeat="day for day in days" ng-click="getMenuByDays(day)">{{day}}</li>
+                  <li><a href="#">Good rest</a></li>
+                  <li><a href="#">Services</a></li>
+                </ul>
+              
+              </li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+          </nav>
+          <div class="clear"></div>
+        </div> -->
+</div>
+
+
+
+<div class="container-fluid">
+	<div id="div12" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+
+
+
+		<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" id="div09">
+<form>
+			<div class="transbox">
+				<!-- <div  class="col-md-3 col-sm-3 col-lg-3 col-xs-3 " >
+			<h3><b>Sort Menu by: </b></h3>
+			</div> -->
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Menus</div>
+					<div id="myNavData">
+						
+							<div>
+								<select class="form-control" ng-model="menuFilter.type"
+									ng-options="time for time in times">
+									<option value="">All</option>
+								</select>
+							</div>
+						
+					</div>
+				</div>
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Veg/Non-Veg</div>
+					<div id="myNavData">
+						<div>
+							<div>
+								<select class="form-control" ng-model="menuFilter.category"
+									ng-options="category for category in categorys">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Days</div>
+					<div id="myNavData">
+						<div>
+							<div>
+								<select class="form-control" ng-model="menuFilter.day"
+									ng-options="day for day in days">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<div id="myNavDiv" class=" col-md-3 col-sm-3 col-lg-3 col-xs-3 ">
+					<div id="title">Vendor</div>
+					<div id="myNavData">
+						<div>
+							<div>
+								<select class="form-control" ng-model="menuFilter.vendor" ng-options="ven for ven in vendors">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+
+				</div>			
+			</div>
+			<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" align="center">
+								<input type="reset" value="Reset" ng-click="menuFilter=undefined" class="form-control btn" style="background-color:#835136; color:black ; width:80px;" >
+							
+							</div>
+			</form>
+			<div>
+
+				<div style="width: 300px; margin: 0px auto;" ng-show="(menuList|filter:menuFilter.day|filter:menuFilter.type|filter:menuFilter.category|filter:menuFilter.vendor).length == 0">
+				<!-- <img width="300px" height="300px" src="template/images/2-512.png"
+					alt="smiley"/> -->
+					<h2 align="center" style="color:#075175"><br/>We are Sorry.<br /> No items are available for your
+						selection</h2>
+				</div>
+
+				<div ng-if="menuList.length===0">
+
+					<!-- <div id="myModal" class="modal fade" role="dialog"
+			style="height: 350px;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							&times;</button>
+						<h4 class="modal-title">
+							&nbsp;<b>Added successfully.</b>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+
+					<!-- <div style="width: 300px; margin: 0px auto;">
+				<img width="300px" height="300px" src="template/images/2-512.png"
+					alt="smiley" />
+			</div> -->
+					<!-- <h2 align="center">
+						<br/>We are Sorry.<br /> No items are available for your
+						selection
+
+					</h2> -->
+
+
+				</div>
+
+
+
+
+
+				<div id="mainTab" class="transbox"
+					ng-repeat="menu in menuList |filter :menuFilter.type:true| filter :menuFilter.category:true|filter :menuFilter.day:true|filter :menuFilter.vendor:true ">
+
+					<div>
+						<h5 align="center">
+							<span ng-if="menu.category==='Vegetarian'" style="color: green;"><key>{{menu.item}}</key></span>
+							<span ng-if="menu.category==='Non-Vegetarian'" style="color: red;"><key>{{menu.item}}</key></span>
+						</h5>
+					</div>
+<!-- {{menu.productId}} -->
+
+					<h5 align="center" ><span ng-if="menu.category==='Vegetarian'"><img width="40px" height="40px" src="template/images/veg icon.png"
+					alt="Vegetarian"/></span><span ng-if="menu.category==='Non-Vegetarian'"><img width="40px" height="40px" src="template/images/nonveg_icon.png"
+					alt="Non-Vegetarian" /></span></h5>
+					<h5 align="center">{{menu.type}}</h5>
+					<h5 align="center">{{menu.day}}</h5>
+					<h5 align="center">{{menu.vendorName}}</h5>
+
+					<h5 align="center">
+						<key>{{menu.price | currency:"&#8377;"}}</key>
+					</h5>
+
+
+					<!-- <h5 align="center">
+					<button class="btn btn-success btn-xs " data-toggle="modal"
+						data-target="#myModal" ng-click="addtocart(menu)">Add to
+						Cart</button>
+				</h5> -->
+					<center>
+						<b>Average rating: {{menu.averageRate}} out of 5</b>
+					</center>
+					<center>
+
+
+
+						<h5 ng-model="rating" class="rating">
+
+							<div class="flip-container"
+								ontouchstart="this.classList.toggle('hover');">
+								<div class="flipper">
+									<div class="front"
+										style="color:#420371; text-decoration: underline;" align="center">
+										<h5><b>Give Rating</b>&nbsp<span class="glyphicon glyphicon-hand-right"></span>
+											
+										</h5>
+									</div>
+									<div class="back">
+										 <div star-rating rating-value=1 max=5
+													average="rating.average"
+													on-rating-selected="getSelectedRating(menu.productId,rating)">
+												</div> 
+												
+									</div>
+								</div>
+							</div>
+						</h5>
+					</center>
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+		</div>
+
+
+
+
+	</div>
+</div>
+
+<div id="ratingModal" class="modal fade" role="dialog"
+	style="height: 350px;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					&times;</button>
+				<h4 class="modal-title">
+					&nbsp;<b><center>Thank you for rating</center></b>
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
